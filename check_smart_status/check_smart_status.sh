@@ -24,13 +24,13 @@ for DISK_NAME in $DISK_NAMES; do
     # Check if Reallocated_Sector_Ct is greater than or equal to 10
     if [ $reallocated_sector_ct -ge 10 ] ; then
         RESULT="[CRITICAL] $DISK_NAME - Reallocated_Sector_Ct is greater than 10\n$RESULT"
-        ERROR_COUNT++
+        let ERROR_COUNT++
     fi
 
     # Check if Media_Wearout_Indicator is less than or equal to 10
     if [ $media_wearout_indicator -le 10 ]; then
         RESULT="[CRITICAL] $DISK_NAME - Media_Wearout_Indicator is less than 10\n$RESULT"
-        ERROR_COUNT++
+        let ERROR_COUNT++
     fi
 
     # Get the OK output
