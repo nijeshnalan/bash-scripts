@@ -7,7 +7,7 @@ STATE_CRITICAL=2
 STATE_UNKNOWN=3
 
 # Get Disk names
-DISK_NAMES=$(lshw -class disk | grep "logical name:" | awk {'print $3'})
+DISK_NAMES=$(sudo lshw -class disk | grep "logical name:" | awk {'print $3'})
 
 # Defining Variables
 ERROR_COUNT=0
